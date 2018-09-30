@@ -26,7 +26,7 @@ SECRET_KEY = 'umcfm^u-s2xcm1uovzkxuvb&=13hnvuepw7bpgbjeogiqhm4nh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["192.168.137.1",]
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'firstapp',
     'django_tables2',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
