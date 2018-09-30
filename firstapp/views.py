@@ -10,15 +10,15 @@ def Formnameview(request):
     path='E:/udemy/first_project/firstapp/farmbook.csv'
     data = pd.read_csv(path)
 
-    season='Kharif'
-    district='MADURAI'
-    soil='black'
+    season=''
+    district=''
+    soil=''
     def compute(Season,district,soil):
         data_season = data[data['Season'].str.contains(season)]
         data_district=data_season[data_season['District'].str.contains(district)]
         data_soil=data_district[data_district['soiltype'].str.contains(soil)]
         ts=data_soil[['Crop']]
-        return ts
+        return ts[['Crop']].head(8)
     form=forms.Formname()
     if request.method=='POST':
         form=forms.Formname(request.POST)
@@ -26,10 +26,10 @@ def Formnameview(request):
             season=form.cleaned_data['user']
             district=form.cleaned_data['password']
             soil=form.cleaned_data['text']
-    
+
 
     da=compute(season,district,soil)
-    data_html = da.to_html()
+    data_html = da.to_html(index=False)
     context = {'loaded_data': data_html,'form':form}
     # return render(request,'form_page.html',{'form':form})
     print(context)
