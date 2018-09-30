@@ -20,8 +20,10 @@ from firstapp import views
 from django.conf.urls import include
 urlpatterns = [
     path('',views.index,name='index'),
-    path('firstapp/',include('firstapp.urls')),
+    #path('firstapp/',include('firstapp.urls')),
+    url('formpage/',views.Formnameview,name='Formname'),
     path('admin/', admin.site.urls),
     url('help/',views.help,name='help'),
+
 
 ]

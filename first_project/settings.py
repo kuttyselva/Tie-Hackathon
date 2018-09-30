@@ -26,7 +26,7 @@ SECRET_KEY = 'umcfm^u-s2xcm1uovzkxuvb&=13hnvuepw7bpgbjeogiqhm4nh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.137.1',]
+ALLOWED_HOSTS = []
 
 
 # Application definition
